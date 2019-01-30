@@ -444,46 +444,48 @@ namespace POSK
                     if (pop)
                     {
                         text = textBox2.Lines[n].Substring(4, 2);
-                        if (tablicaS.Length > 1024)
+
+                        // tutaj był twój if. Przeniosłem go niżej zaraz po zwiększeniu wskaźnika. Wskaźnik stosu jest pod zmienna 
+                        // wskaźnik a nie długością tablicy
+
+                        if (text == "AH")
+                        {
+                            POOP = int.Parse(AH.Text); //to podobno zmienia stringa którym są rejestry w inta którym jest sp
+                        }
+                        if (text == "AL")
+                        {
+                            POOP = int.Parse(AL.Text);
+                        }
+                        if (text == "BH")
+                        {
+                            POOP = int.Parse(BH.Text);
+                        }
+                        if (text == "BL")
+                        {
+                            POOP = int.Parse(BL.Text);
+                        }
+                        if (text == "CH")
+                        {
+                            POOP = int.Parse(CH.Text);
+                        }
+                        if (text == "CL")
+                        {
+                            POOP = int.Parse(CL.Text);
+                        }
+                        if (text == "DH")
+                        {
+                            POOP = int.Parse(DH.Text);
+                        }
+                        if (text == "DL")
+                        {
+                            POOP = int.Parse(DL.Text);
+                        }
+                        // tablicaS[wskaznik] = POOP; //powinno wpisac wartosc sp na stos
+                        wskaznik++;
+                        // tutaj wrzuciłem tego if twojego
+                        if (wskaznik > 1023)
                         {
                             MessageBox.Show("Alarma! Przekroczyłeś wartość stosu! Wykonaj inną funkcję!");
-                        }
-                        else
-                        {
-                            if (text == "AH")
-                            {
-                                POOP = int.Parse(AH.Text); //to podobno zmienia stringa którym są rejestry w inta którym jest sp
-                            }
-                            if (text == "AL")
-                            {
-                                POOP = int.Parse(AL.Text);
-                            }
-                            if (text == "BH")
-                            {
-                                POOP = int.Parse(BH.Text);
-                            }
-                            if (text == "BL")
-                            {
-                                POOP = int.Parse(BL.Text);
-                            }
-                            if (text == "CH")
-                            {
-                                POOP = int.Parse(CH.Text);
-                            }
-                            if (text == "CL")
-                            {
-                                POOP = int.Parse(CL.Text);
-                            }
-                            if (text == "DH")
-                            {
-                                POOP = int.Parse(DH.Text);
-                            }
-                            if (text == "DL")
-                            {
-                                POOP = int.Parse(DL.Text);
-                            }
-                           // tablicaS[wskaznik] = POOP; //powinno wpisac wartosc sp na stos
-                            wskaznik++;
                         }
                     }
                 }
